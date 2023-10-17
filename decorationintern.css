@@ -1,0 +1,60 @@
+/* Resetear los estilos por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Times New Roman, sans-serif;
+    line-height: 1.6;
+    background-color #BFAA8C; /* Fondo con degradado de colores */
+
+}
+header {
+    background-color: #BFAA8C;
+    color: darkbrown;
+    text-align: left;
+    padding: 1rem;
+    font: Times New Roman;
+
+
+}
+
+h1{
+    font-weight: 110;
+    
+}
+
+h2{
+    font-weight: 10;
+    color: black;
+    text-align: center;
+    width: 49%;
+    float: left;
+
+
+}
+img{
+    width: 350px;
+    height: 350px;
+    
+
+
+}
+
+.contenedor{
+    overflow: hidden;
+     border-radius: 40px;
+
+}
+
+.titulos{
+    border-radius: 20px;
+    background-color: #A0816C;
+}
+
+.esp{
+
+    border-radius: 20px;
+}
