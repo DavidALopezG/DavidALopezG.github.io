@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Espacio virtual</title>
+    <link rel="icon" type="image/png" href="imagenes/fondos/icono.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    
+</head>
+<body>
+
+    <div class="sanrio-background" id="sanrioBackground"></div>
+
+    <div id="pantallaLogin" class="container-fluid d-flex align-items-center justify-content-center min-vh-100 position-relative z-3">
+        <div class="login-card p-5 text-center shadow-sm border-0">
+            <h1 class="titulo-elegante mb-2">Nuestro Espacio Virtual</h1>
+            <p class="subtitulo-delicado mb-4">Ingresa tu contraseña ultrasecretisima</p>
+            
+            <form id="formularioLogin" onsubmit="verificarAcceso(event)">
+                <div class="mb-3 text-start">
+                    <label for="inputUsuario" class="form-label label-delicado">Usuario</label>
+                    <input type="text" class="form-control custom-input" id="inputUsuario" autocomplete="off" required placeholder="pista: como gato y amor">
+                </div>
+                <div class="mb-4 text-start">
+                    <label for="inputClave" class="form-label label-delicado">Contraseña Secreta</label>
+                    <input type="password" class="form-control custom-input" id="inputClave" required placeholder="fecha especial(dia/mes)">
+                </div>
+                <button type="submit" class="btn btn-custom w-100 py-2">Ingresar</button>
+                <div id="errorLogin" class="text-danger mt-3 small d-none">Las credenciales no coinciden. Inténtalo de nuevo, miauamor (pista).</div>
+            </form>
+        </div>
+    </div>
+
+    <div id="contenidoPrincipal" class="container py-5 d-none position-relative z-3">
+        <div class="text-center mb-5">
+            <h1 class="titulo-elegante display-4">Hola Amorcito!</h1>
+            <p class="subtitulo-delicado fs-5">Qué alegría tenerte de vuelta hoy, no te olvides de entrar diariamente para no perderte de sorpresas</p>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-10 text-center">
+                <div class="contador-container p-4 p-md-5 shadow-sm">
+                    <h2 class="subtitulo-delicado text-uppercase tracking-wide mb-4" style="font-size: 0.9rem; letter-spacing: 2px;">Este es el tiempo desde que nuestros corazones se unieron:</h2>
+                    
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-4 col-sm-2">
+                            <div class="contador-box">
+                                <span id="meses" class="contador-numero">00</span>
+                                <span class="contador-etiqueta">Meses</span>
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-2">
+                            <div class="contador-box">
+                                <span id="semanas" class="contador-numero">00</span>
+                                <span class="contador-etiqueta">Semanas</span>
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-2">
+                            <div class="contador-box">
+                                <span id="dias" class="contador-numero">00</span>
+                                <span class="contador-etiqueta">Días</span>
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-2">
+                            <div class="contador-box">
+                                <span id="horas" class="contador-numero">00</span>
+                                <span class="contador-etiqueta">Horas</span>
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-2">
+                            <div class="contador-box">
+                                <span id="minutos" class="contador-numero">00</span>
+                                <span class="contador-etiqueta">Minutos</span>
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-2">
+                            <div class="contador-box">
+                                <span id="segundos" class="contador-numero">00</span>
+                                <span class="contador-etiqueta">Segundos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+                <a href="galleta.html" class="card-enlace">
+                    <div class="menu-card p-4 text-center shadow-sm">
+                        <div class="icon-wrapper mb-3">
+                            <i class="fa-solid fa-cookie-bite fs-4"></i>
+                        </div>
+                        <h3 class="h5 mb-2 titulo-elegante">Galleta de la Fortuna</h3>
+                        <p class="small text-muted mb-0">Descubre tu pensamiento y consejo personalizado del día de hoy.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a href="calendario.html" class="card-enlace">
+                    <div class="menu-card p-4 text-center shadow-sm">
+                        <div class="icon-wrapper mb-3">
+                            <i class="fa-regular fa-calendar-days fs-4"></i>
+                        </div>
+                        <h3 class="h5 mb-2 titulo-elegante">Calendario Sorpresa</h3>
+                        <p class="small text-muted mb-0">Una pequeña cajita digital lista para abrirse cada día del mes.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a href="cupones.html" class="card-enlace">
+                    <div class="menu-card p-4 text-center shadow-sm">
+                        <div class="icon-wrapper mb-3">
+                            <i class="fa-solid fa-ticket-simple fs-4"></i>
+                        </div>
+                        <h3 class="h5 mb-2 titulo-elegante">Cupones Semanales</h3>
+                        <p class="small text-muted mb-0">Raspa digitalmente la pantalla para reclamar tu premio semanal.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a href="" class="card-enlace">
+                    <div class="menu-card p-4 text-center shadow-sm">
+                        <div class="icon-wrapper mb-3">
+                            <!-- Se cambió fa-triangle-exclamation por fa-bell -->
+                            <i class="fa-solid fa-bell fs-4"></i>
+                        </div>
+                        <h3 class="h5 mb-2 titulo-elegante">Proximamente, más sorpresas!</h3>
+                        <p class="small text-muted mb-0">Con el tiempo iré agregando mas sorpresas asi que no te olvides de ingresar</p>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+        
+        <div class="text-center mt-5">
+            <button class="btn btn-link btn-sm text-muted text-decoration-none" onclick="cerrarSesion()">
+                <i class="fa-solid fa-arrow-right-from-bracket me-1"></i> Cerrar sesión del dispositivo
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/contador.js"></script>
+    <script src="js/fondoDinamic.js"></script>
+</body>
+</html>

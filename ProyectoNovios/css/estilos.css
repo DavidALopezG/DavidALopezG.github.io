@@ -1,0 +1,555 @@
+/* PALETA DE COLORES PASTEL: Crema, Rosa Pastel, Beige, Blanco Suave */
+:root {
+    --bg-crema: #faf6f0;
+    --bg-tarjeta: rgba(255, 255, 255, 0.82);
+    --rosa-pastel: #f7d6d6;
+    --rosa-acento: #e5b3b3;
+    --beige-oscuro: #bd9b83;
+    --texto-principal: #5a4b41;
+    --texto-mutado: #8a766a;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--texto-principal);
+    background-color: var(--bg-crema);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* FUENTES Y TIPOGRAFÍAS */
+.titulo-elegante {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--texto-principal);
+}
+
+.subtitulo-delicado {
+    font-weight: 400;
+    color: var(--texto-mutado);
+    letter-spacing: 0.5px;
+}
+
+.label-delicado {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--texto-mutado);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ANIMACIÓN DE FONDO (Círculos gigantes pasteles moviéndose de forma orgánica) */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.5;
+    animation: floatAnimation 22s infinite ease-in-out;
+}
+
+.circle-1 {
+    width: 450px;
+    height: 450px;
+    background-color: var(--rosa-pastel);
+    top: -10%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.circle-2 {
+    width: 550px;
+    height: 550px;
+    background-color: #f3e1d3;
+    bottom: -15%;
+    right: -10%;
+    animation-delay: 5s;
+}
+
+.circle-3 {
+    width: 380px;
+    height: 380px;
+    background-color: #e6eae0;
+    top: 35%;
+    left: 45%;
+    animation-delay: 10s;
+}
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0) scale(1) translateX(0); }
+    33% { transform: translateY(50px) scale(1.08) translateX(40px); }
+    66% { transform: translateY(-30px) scale(0.92) translateX(-30px); }
+}
+
+/* CARDS CON ESTILO CRISTAL (BLUR) */
+.login-card {
+    background: var(--bg-tarjeta);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    max-width: 420px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+
+.custom-input {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(189, 155, 131, 0.2);
+    border-radius: 12px;
+    padding: 10px 14px;
+    color: var(--texto-principal);
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    background-color: #ffffff;
+    border-color: var(--rosa-acento);
+    box-shadow: 0 0 0 3px rgba(247, 214, 214, 0.4);
+    color: var(--texto-principal);
+}
+
+.btn-custom {
+    background-color: var(--rosa-acento);
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #d69c9c;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(229, 179, 179, 0.4);
+}
+
+/* CONTADOR */
+.contador-container {
+    background: var(--bg-tarjeta);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.contador-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    padding: 15px 5px;
+    border: 1px solid rgba(189, 155, 131, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contador-numero {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--texto-principal);
+    font-family: 'Playfair Display', serif;
+}
+
+@media (min-width: 576px) {
+    .contador-numero { font-size: 2.3rem; }
+}
+
+.contador-etiqueta {
+    font-size: 0.72rem;
+    color: var(--texto-mutado);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* TARJETAS DE NAVEGACIÓN DEL MENÚ */
+.card-enlace {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.menu-card {
+    background: var(--bg-tarjeta);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--rosa-pastel);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.icon-wrapper {
+    width: 55px;
+    height: 55px;
+    background-color: rgba(247, 214, 214, 0.35);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--texto-principal);
+    transition: background-color 0.3s ease;
+}
+
+.menu-card:hover .icon-wrapper {
+    background-color: var(--rosa-pastel);
+}
+
+/* ==========================================================================
+   DISEÑO EVOLUCIONADO: GALLETA DE LA FORTUNA CLÁSICA TRIDIMENSIONAL
+   ========================================================================== */
+
+   .galleta-fortune-container {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+    margin-top: 20px;
+}
+
+/* Estructura base para emular la masa doblada de la galleta */
+.galleta-fortune-mitad {
+    width: 90px;
+    height: 150px;
+    position: absolute;
+    background: radial-gradient(circle at center, #f5d1a4 0%, #e0b276 80%, #c99859 100%);
+    box-shadow: inset -4px 4px 12px rgba(255, 255, 255, 0.3), 
+                inset 4px -4px 12px rgba(0, 0, 0, 0.15),
+                0 10px 20px rgba(90, 75, 65, 0.12);
+    transition: all 0.85s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 5;
+}
+
+/* Sombra e iluminación del pliegue de la masa */
+.pliegue-interno {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.08) 0%, transparent 50%, rgba(0,0,0,0.03) 100%);
+    border-radius: inherit;
+}
+
+/* Curvatura izquierda de la galleta tradicional */
+.galleta-fortune-mitad.izq {
+    left: 4px;
+    border-radius: 90px 30px 30px 120px;
+    transform-origin: left center;
+    transform: rotate(-5deg);
+}
+
+/* Curvatura derecha simétrica de la galleta tradicional */
+.galleta-fortune-mitad.der {
+    right: 4px;
+    border-radius: 30px 90px 120px 30px;
+    transform-origin: right center;
+    transform: rotate(5deg);
+    box-shadow: inset 4px 4px 12px rgba(255, 255, 255, 0.2), 
+                inset -4px -4px 12px rgba(0, 0, 0, 0.18),
+                0 10px 20px rgba(90, 75, 65, 0.12);
+}
+
+/* ANIMACIÓN DE APERTURA: Se rompe y gira hacia afuera en 3D */
+.galleta-fortune-container.abierta .galleta-fortune-mitad.izq {
+    transform: rotateY(-110deg) rotateZ(-20px) translateX(-55px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.galleta-fortune-container.abierta .galleta-fortune-mitad.der {
+    transform: rotateY(110deg) rotateZ(20px) translateX(55px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* PAPELITO DE LA FORTUNA MEJORADO */
+.papel-mensaje-premium {
+    position: absolute;
+    width: 190px;
+    min-height: 65px;
+    background: #ffffff;
+    padding: 12px 14px;
+    box-shadow: 0 8px 25px rgba(90, 75, 65, 0.1);
+    border-radius: 2px;
+    transform: scale(0.3) rotate(-10deg);
+    opacity: 0;
+    z-index: 2;
+    transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Línea roja clásica decorativa de los mensajes de la fortuna */
+.borde-decorativo {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    width: 2px;
+    background-color: rgba(229, 179, 179, 0.7);
+}
+
+/* Animación del papel emergiendo con un sutil balanceo */
+.galleta-fortune-container.abierta .papel-mensaje-premium {
+    transform: scale(1.05) rotate(0deg) translateY(-5px);
+    opacity: 1;
+    z-index: 6;
+}
+
+.mensaje-texto {
+    font-size: 0.82rem;
+    color: var(--texto-principal);
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 500;
+    padding-left: 6px;
+    font-style: italic;
+}
+
+/* ESTILOS DEL CALENDARIO */
+.dia-caja {
+    perspective: 1000px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.dia-interno {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Estado bloqueado */
+.dia-caja.bloqueado {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Diseño de la cara frontal (el número) */
+.dia-frente {
+    background: var(--bg-tarjeta);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--texto-mutado);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* Estilo especial para el día 23 */
+.dia-caja.especial-23 .dia-frente {
+    background: linear-gradient(135deg, #fff5f5 0%, #f7d6d6 100%);
+    border: 2px solid var(--rosa-acento);
+    color: var(--texto-principal);
+}
+
+.dia-caja.especial-23 .dia-frente::after {
+    content: '\f004'; /* Icono corazón FontAwesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 0.8rem;
+    color: var(--rosa-acento);
+}
+
+.dia-caja:hover:not(.bloqueado) .dia-interno {
+    transform: translateY(-5px);
+}
+
+/* Estilo para los días que ya se abrieron hoy o antes */
+.dia-caja.abierto .dia-frente {
+    background-color: var(--rosa-pastel);
+    color: white;
+}
+
+
+/* ==========================================================================
+   ESTILOS PARA LOS CUPONES (RASCA Y GANA)
+   ========================================================================== */
+
+   .rasca-container {
+    width: 320px;
+    height: 200px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(90, 75, 65, 0.1);
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+/* Diseño del ticket interior */
+.cupón-contenido {
+    width: 100%;
+    height: 100%;
+    background-color: #fffdfa;
+    position: relative;
+}
+
+.cupon-borde-interno {
+    border: 2px dashed rgba(189, 155, 131, 0.3);
+    border-radius: 12px;
+}
+
+#capaRasca {
+    cursor: url('https://cdnjs.cloudflare.com/ajax/libs/ramda/0.26.1/ramda.min.js'), pointer;
+    touch-action: none; /* Evita que la pantalla del celular se mueva al raspar */
+    border-radius: 16px;
+}
+
+
+/* ==========================================================================
+   NUEVA PALETA SANRIO POP: Colores Vivos y Contrastantes
+   ========================================================================== */
+   :root {
+    --rosa-vivo: #ff4a85;       /* Fucsia/Rosa encendido para títulos y botones */
+    --rosa-chicle: #ff8ebb;     /* Rosa medio para acentos */
+    --rosa-claro: #ffeef4;      /* Fondo suave pero brillante */
+    --blanco-puro: #ffffff;
+    --amarillo-kitty: #ffd11a;  /* El color del moño/nariz clásico */
+    --texto-oscuro: #2a1e24;    /* Mayor contraste para lectura */
+    --sombra-pop: #d6245d;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--texto-oscuro);
+    background-color: var(--rosa-claro);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* TÍTULOS CON DEGRADADO VIVO Y DIVERTIDO */
+.titulo-elegante {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    background: linear-gradient(45deg, var(--rosa-vivo), #ff0055);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
+}
+
+.subtitulo-delicado {
+    font-weight: 600;
+    color: var(--texto-oscuro);
+    opacity: 0.8;
+}
+
+/* TARJETAS ESTILO STICKER (Bordes gruesos y sombras vivas) */
+.login-card, .contador-container, .menu-card {
+    background: var(--blanco-puro) !important;
+    border: 3px solid var(--texto-oscuro) !important;
+    border-radius: 20px !important;
+    box-shadow: 6px 6px 0px var(--sombra-pop) !important; /* Sombra estilo cómic */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px var(--texto-oscuro) !important;
+}
+
+/* BOTONES VIVOS */
+.btn-custom {
+    background-color: var(--rosa-vivo);
+    color: white !important;
+    border: 2px solid var(--texto-oscuro);
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 3px 3px 0px var(--texto-oscuro);
+    transition: all 0.15s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--amarillo-kitty);
+    color: var(--texto-oscuro) !important;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px var(--texto-oscuro);
+}
+
+/* CONTADOR DE TIEMPO VIVO */
+.contador-box {
+    background-color: var(--rosa-claro);
+    border: 2px solid var(--texto-oscuro);
+    border-radius: 14px;
+    box-shadow: 3px 3px 0px var(--rosa-chicle);
+}
+
+.contador-numero {
+    color: var(--rosa-vivo) !important;
+    -webkit-text-fill-color: initial !important;
+    background: none !important;
+}
+
+/* ==========================================================================
+   ANIMACIÓN DE ELEMENTOS FLOTANTES (HELLO KITTY STYLE)
+   ========================================================================== */
+   .sanrio-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2; /* Lo subimos un nivel */
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Forzamos que el contenido principal se vea por encima de las kitties */
+.position-relative.z-3 {
+    z-index: 5 !important; 
+}
+
+/* Aseguramos que los iconos flotantes tengan visibilidad */
+.kitty-flotante {
+    position: absolute;
+    bottom: -50px;
+    display: inline-block !important;
+    opacity: 0.8 !important; /* Un poco más vivos para que se noten */
+    animation: flotarHaciaArriba 10s linear forwards;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+}
+
+@keyframes flotarHaciaArriba {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+    }
+}

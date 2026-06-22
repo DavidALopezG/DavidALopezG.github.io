@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupones Semanales Virtuales</title>
+    <link rel="icon" type="image/png" href="imagenes/fondos/icono.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="sanrio-background" id="sanrioBackground"></div>
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <div class="container py-5 position-relative z-3 min-vh-100 d-flex flex-column justify-content-between">
+        
+        <div class="text-start mb-4">
+            <a href="index.html" class="btn btn-link text-muted text-decoration-none">
+                <i class="fa-solid fa-arrow-left me-2"></i> Volver al inicio
+            </a>
+        </div>
+
+        <div class="row justify-content-center my-auto">
+            <div class="col-md-6 text-center">
+                <div class="contador-container p-4 p-md-5 shadow-sm">
+                    <h1 class="titulo-elegante mb-2">Cupón de la Semana</h1>
+                    <p class="subtitulo-delicado mb-4" id="instruccionCupon">Limpia la superficie para descubrir tu premio</p>
+
+                    <div class="rasca-container mx-auto position-relative" id="contenedorRasca">
+                        <div class="cupón-contenido d-flex flex-column align-items-center justify-content-center p-4">
+                            <div class="cupon-borde-interno d-flex flex-column align-items-center justify-content-center w-100 h-100">
+                                <i class="fa-solid fa-gift fs-1 mb-2 text-custom-rosa" style="color: var(--rosa-acento);"></i>
+                                <h3 class="titulo-elegante h4 mb-2" id="cuponTitulo">Vale por...</h3>
+                                <p class="small text-muted px-3 text-center mb-0" id="cuponDescripcion">¡Cargando premio!</p>
+                            </div>
+                        </div>
+                        <canvas id="capaRasca" width="320" height="200" class="position-absolute top-0 start-0"></canvas>
+                    </div>
+
+                    <div id="bloqueoSemanal" class="d-none text-center py-3">
+                        <div class="icon-wrapper mb-3" style="background-color: rgba(247, 214, 214, 0.4);">
+                            <i class="fa-solid fa-lock text-muted"></i>
+                        </div>
+                        <p class="subtitulo-delicado mb-2">Ya canjeaste tu beneficio de esta semana.</p>
+                        <div class="contador-bloqueo py-2 px-3 mx-auto mb-2" id="relojSemanal">0d 00h 00m</div>
+                        <p class="small text-muted">Tu próximo cupón se habilitará al terminar la cuenta.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8 text-center">
+                <p class="small text-muted">Recuerda tomarle una captura de pantalla a tu cupón premiado y enviármela cuando quieras hacerlo válido. ¡Solo tienes una oportunidad por semana! <br>si no lo puedes ver y ya paso una semana dime que lo arregle</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cupones.js"></script>
+    <script src="js/fondoDinamic.js"></script>
+
+</body>
+</html>
