@@ -24,7 +24,7 @@ const CONTENIDO_DIARIO = {
     20: { frase: "Gracias por tener siempre las palabras exactas cuando más lo necesito.", tarea: "Hoy nos toca recordar nuestra primera cita. Cuéntame qué fue lo primero que pensaste al verme.", imagen: "imagenes/fotos/20.png" },
     21: { frase: "Incluso en mis días más distraídos, estás presente en mi mente.", tarea: "Hoy te ganaste un 'Vale por un postre'. Elige tu favorito y yo te lo llevo pronto.", imagen: "imagenes/fotos/21.png" },
     22: { frase: "Tu felicidad siempre va a ser mi prioridad número uno.", tarea: "Escríbeme una sola palabra que describa lo que sientes cuando estamos juntos.", imagen: "imagenes/fotos/22.png" },
-    23: { frase: "¡Feliz nuevo mes a mi lado! Cada día te amo más.", tarea: "Hoy la cita la planeo yo, prepárate para una sorpresa.", imagen: "imagenes/fotos/aniversario.png" },
+    23: { frase: "¡Feliz nuevo mes a mi lado! Cada día te amo más.", tarea: "Hoy tenemos una visita a los mochis para soplar otra velita, no te olvides!!.", imagen: "imagenes/fotos/23.png" },
     24: { frase: "Amo la paz que me transmites con solo tomar mi mano.", tarea: "Hoy tómate cinco minutos para estirarte, relajarte y escuchar tu canción favorita sin hacer nada más.", imagen: "imagenes/fotos/24.png" },
     25: { frase: "Tu risa escandalosa o bajita es el mejor premio que puedo recibir.", tarea: "Hoy busquemos un test divertido en internet (tipo '¿Qué personaje de Sanrio eres?') y compartamos los resultados.", imagen: "imagenes/fotos/25.png" },
     26: { frase: "Eres la combinación perfecta de ternura y diversión.", tarea: "Hoy te toca enviarme una recomendación de algo que deba escuchar, ver o leer.", imagen: "imagenes/fotos/26.png" },
