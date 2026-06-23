@@ -553,3 +553,44 @@ body {
         transform: translateY(-120vh) rotate(360deg);
     }
 }
+
+
+
+
+/* ==========================================================================
+   CORRECCIÓN PARA MODALES EN MÓVILES (EVITAR DESPLAZAMIENTOS)
+   ========================================================================== */
+
+/* Evita que la página principal se mueva o se desplace verticalmente mientras el modal está abierto */
+body.modal-open {
+    overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+}
+
+/* Fuerza a que el modal se adapte correctamente al ancho de la pantalla móvil sin desbordarse */
+.modal-dialog {
+    max-width: 90% !important;
+    margin: 1.75rem auto !important;
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 3.5rem);
+}
+
+/* Evita que las imágenes grandes dentro del modal estiren la ventana y rompan el diseño */
+/* AJUSTE INTELIGENTE PARA LA FOTO DEL MODAL */
+#modalImagen {
+    width: 100%;           /* Forza a la imagen a usar todo el ancho del modal */
+    max-height: 420px;     /* Altura máxima cómoda para pantallas móviles */
+    object-fit: contain;   /* ¡CLAVE! Ajusta la foto completa para que se vea TODO sin recortes */
+    background-color: var(--rosa-claro); /* Añade un fondo sutil por si la foto es muy angosta */
+    border-radius: 12px;
+    border: 2px solid var(--texto-oscuro);
+    margin-bottom: 15px;
+}
+
+/* Corrige el comportamiento del scroll interno del modal si el texto es largo */
+.modal {
+    background-color: rgba(42, 30, 36, 0.5) !important; /* Fondo oscuro semi-transparente */
+    -webkit-overflow-scrolling: touch; /* Suaviza el toque en iOS */
+}
