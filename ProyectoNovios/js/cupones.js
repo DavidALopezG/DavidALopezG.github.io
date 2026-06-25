@@ -3,10 +3,25 @@ const LISTA_CUPONES = [
     { titulo: "Tarde de Películas", desc: "Tú eliges las películas y los snacks, yo pongo los abrazos sin interrupciones." },
     { titulo: "Masaje Relajante", desc: "Válido por una sesión de spa en casa de 30 minutos con música tranquila." },
     { titulo: "Vale por un Sí", desc: "Tienes el derecho de ganar cualquier discusión o elegir el plan sin objeciones hoy." },
-    { titulo: "Día de flojera", desc: "Nos quedamos acostados todo el día descansando sin hacer absolutamente nada de pendientes." }
+    { titulo: "Día de flojera", desc: "Nos quedamos acostados todo el día descansando sin hacer absolutamente nada de pendientes." },
+    { titulo: "Pase de Desayuno", desc: "Me levanto temprano y te llevo el desayuno a la cama con tu café o té favorito." },
+    { titulo: "Esclavo por 1 Hora", desc: "Durante 60 minutos haré todo lo que me pidas: traerte agua, rascarte la espalda, limpiar algo, etc." },
+    { titulo: "Paseo Nocturno", desc: "Válido para salir a caminar por la noche a platicar, ver las estrellas o comprar un antojo simple." },
+    { titulo: "Pase de Besos", desc: "Válido por una lluvia de besos interminable en el momento del día que tú decidas." },
+    { titulo: "Tu Playlist Ideal", desc: "Crearé una lista de canciones en Spotify que me recuerden a ti para que la escuches cuando quieras." },
+    { titulo: "Sesión de Fotos", desc: "Seré tu fotógrafo personal durante 20 minutos para que tengas tus fotos perfectas de Instagram." },
+    { titulo: "Canción Dedicada", desc: "Elegiré una canción especial y te la cantaré al oído (prometo hacer mi mejor esfuerzo sin dar pena)." },
+    { titulo: "Clon de Abrazos", desc: "Un abrazo fuerte y apretado que durará un minuto entero (o hasta que tú decidas soltarme)." },
+    { titulo: "Noche de Juegos", desc: "Jugamos a tu videojuego favorito, juego de mesa o cartas, y prometo dejarte ganar... tal vez." },
+    { titulo: "Peinado VIP", desc: "Válido para que juegues con mi cabello, me hagas trenzas, me peines o me hagas piojito hasta que te canses." },
+    { titulo: "Carta de Amor Express", desc: "Te escribiré una notita a mano diciéndote las 5 cosas que más me enamoraron de ti esta semana." },
+    { titulo: "Pase de Antojo", desc: "Iré corriendo a la tiendita a comprarte ese dulce, papitas o chocolate que tanto se te antojó de la nada." },
+    { titulo: "Baile en la Sala", desc: "Ponemos nuestra canción favorita a todo volumen y bailamos abrazados a mitad de la casa." },
+    { titulo: "Chef de Postres", desc: "Prepararé un postre rápido y casero (como fresas con crema o hot cakes) con la forma que tú quieras." },
+    { titulo: "Noche de Historias", desc: "Nos acostamos a recordar cómo nos conocimos, nuestras primeras citas y nuestros momentos más graciosos juntos." }
 ];
 
-const TIEMPO_SEMANA_MS = 7 * 24 * 60 * 60 * 1000; // 7 días exactos
+const TIEMPO_SEMANA_MS = 5 * 24 * 60 * 60 * 1000; // 7 días exactos
 let relojIntervalo;
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -70,7 +85,7 @@ function verificarPorcentajeRaspado(canvas, ctx) {
         // Le damos 5 segundos para disfrutar ver su cupón antes de bloquearlo por la semana
         setTimeout(() => {
             mostrarPantallaBloqueo(ahora);
-        }, 6000);
+        }, 16000);
     }
 }
 
