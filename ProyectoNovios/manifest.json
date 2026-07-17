@@ -1,0 +1,22 @@
+{
+  "short_name": "Kitties 🎀",
+  "name": "Nuestro Rincón Mágico 🎀",
+  "description": "Un espacio especial lleno de recuerdos, cupones y sorpresas.",
+  "icons": [
+    {
+      "src": "imagenes/icono-app.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "imagenes/icono-app.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#fff0f5",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#ffb7c5"
+}
