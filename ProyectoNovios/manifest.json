@@ -4,7 +4,7 @@
   "description": "Un espacio especial lleno de recuerdos, cupones y sorpresas.",
   "icons": [
     {
-      "src": "imagenes/icono-app.png",
+      "src": "./imagenes/icono-app.png",
       "type": "image/png",
       "sizes": "192x192"
     },
