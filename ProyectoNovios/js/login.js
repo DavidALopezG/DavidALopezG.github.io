@@ -49,10 +49,7 @@ function cerrarSesion() {
     localStorage.removeItem("sesionAmorActiva");
     
     // 🎀 OCULTAR EL BOTÓN AL CERRAR SESIÓN POR SEGURIDAD
-    const btnChatbot = document.getElementById("openChatBtn");
-    if (btnChatbot) {
-        btnChatbot.style.display = "none";
-    }
+   
 
     window.location.reload(); // Recarga para volver a bloquear el acceso
 }
