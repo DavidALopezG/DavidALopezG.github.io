@@ -620,6 +620,8 @@ body.modal-open {
 }
 
 .chat-float-btn:hover {
+        display: none; /* 👈 Oculto por defecto antes de iniciar sesión */
+
     position: fixed;
     bottom: 25px;
     right: 25px;
