@@ -1,5 +1,5 @@
 // CONFIGURACIÓN DE LAS CREDENCIALES FIJAS
-const USUARIO_VALIDO = "miaumor"; // Cambia este valor por el nombre de usuario que quieras (en minúsculas, sin espacios
+const USUARIO_VALIDO = "miaumor"; // Cambia este valor por el nombre de usuario que quieras (en minúsculas, sin espacios)
 const CLAVE_VALIDA = "2310"; // Cambia este valor por su fecha de aniversario (ej: DDMM) o la clave que gustes
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -33,6 +33,12 @@ function mostrarTableroPrincipal() {
     const tablero = document.getElementById("contenidoPrincipal");
     tablero.classList.remove("d-none");
     
+    // 🎀 MOSTRAR EL BOTÓN DEL CHATBOT AL ENTRAR AL TABLERO
+    const btnChatbot = document.getElementById("openChatBtn");
+    if (btnChatbot) {
+        btnChatbot.style.display = "flex";
+    }
+
     // Ejecutar el contador una vez cargada la interfaz principal
     if (typeof inicializarContador === "function") {
         inicializarContador();
@@ -41,5 +47,12 @@ function mostrarTableroPrincipal() {
 
 function cerrarSesion() {
     localStorage.removeItem("sesionAmorActiva");
+    
+    // 🎀 OCULTAR EL BOTÓN AL CERRAR SESIÓN POR SEGURIDAD
+    const btnChatbot = document.getElementById("openChatBtn");
+    if (btnChatbot) {
+        btnChatbot.style.display = "none";
+    }
+
     window.location.reload(); // Recarga para volver a bloquear el acceso
 }
