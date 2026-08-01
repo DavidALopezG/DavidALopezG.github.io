@@ -555,8 +555,6 @@ body {
 }
 
 
-
-
 /* ==========================================================================
    CORRECCIÓN PARA MODALES EN MÓVILES (EVITAR DESPLAZAMIENTOS)
    ========================================================================== */
@@ -593,4 +591,234 @@ body.modal-open {
 .modal {
     background-color: rgba(42, 30, 36, 0.5) !important; /* Fondo oscuro semi-transparente */
     -webkit-overflow-scrolling: touch; /* Suaviza el toque en iOS */
+}
+
+
+
+/* ==========================================
+   BOTÓN FLOTANTE (Abajo a la derecha)
+   ========================================== */
+   .chat-float-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: linear-gradient(135deg, #ffb7c5, #ff8da1);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 141, 161, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 999;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.chat-float-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 141, 161, 0.6);
+}
+
+/* ==========================================
+   MODAL OVERLAY (Ventana flotante)
+   ========================================== */
+.chat-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(4px); /* Efecto borroso elegante */
+    display: none; /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 15px;
+}
+
+/* Clase para mostrar el modal con animación */
+.chat-modal-overlay.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* ==========================================
+   CONTENEDOR DEL CHAT
+   ========================================== */
+.chat-container {
+    width: 100%;
+    max-width: 400px;
+    height: 520px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(255, 182, 193, 0.5);
+    border: 2px solid #ffccd5;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    animation: slideUp 0.3s ease-out;
+}
+
+/* Encabezado */
+.chat-header {
+    background: #ffb7c5;
+    color: white;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-header-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.chat-info h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.chat-status {
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+.chat-close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+/* Área de Mensajes */
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff0f5;
+}
+
+.message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: 13.5px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.bot-message {
+    background: #ffffff;
+    color: #4a4a4a;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    border: 1px solid #ffe6ea;
+}
+
+.user-message {
+    background: #ffb7c5;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+/* Sugerencias Rápidas */
+.chat-suggestions {
+    display: flex;
+    gap: 8px;
+    padding: 8px 12px;
+    overflow-x: auto;
+    background: #ffffff;
+    border-top: 1px solid #ffe6ea;
+}
+
+.chat-suggestions::-webkit-scrollbar {
+    display: none;
+}
+
+.chip {
+    background: #ffe6ea;
+    color: #ff5c8d;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Barra de entrada */
+.chat-input-area {
+    display: flex;
+    padding: 10px 12px;
+    background: #ffffff;
+    gap: 8px;
+    border-top: 1px solid #ffe6ea;
+}
+
+#chatInput {
+    flex: 1;
+    border: 1px solid #ffccd5;
+    padding: 10px 14px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 13.5px;
+}
+
+#sendBtn {
+    background: #ffb7c5;
+    border: none;
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Estilo para tu imagen personalizada en el encabezado */
+.chat-avatar-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Hace que la imagen sea perfectamente redonda */
+    object-fit: cover;  /* Evita que la imagen se deforme o estire */
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Estilo para la imagen dentro del botón flotante */
+.chat-btn-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 10%;
+    object-fit: cover;
 }
