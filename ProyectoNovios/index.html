@@ -130,6 +130,19 @@
                 </a>
             </div>
 
+            <div class="col-md-4">
+                <a href="citas.html" class="card-enlace">
+                    <div class="menu-card p-4 text-center shadow-sm">
+                        <div class="icon-wrapper mb-3">
+                            <i class="fa-solid fa-heart-circle-check fs-4"></i>
+                        </div>
+                        <h3 class="h5 mb-2 titulo-elegante">100 Citas Juntos</h3>
+                        <p class="small text-muted mb-0">Marca cada aventura que completemos y descubre nuestras próximas citas.</p>
+                    </div>
+                </a>
+            </div>
+            
+
             <!-- TARJETA PARA EL JUEGO -->
             <div class="col-md-4">
     <div class="menu-card p-3 text-center h-100" onclick="abrirJuegoFlappy()">
@@ -195,34 +208,6 @@
 </div>
 
 
-<!-- BOTÓN PARA ABRIR EL MODAL (Puedes ponerlo en tu menú o donde gustes) -->
-<button class="btn-custom py-2 px-4" onclick="abrirModalCitas()">
-    <i class="fa-solid fa-heart-list me-1"></i> Nuestras 100 Citas 📑
-</button>
-
-<!-- MODAL DE LAS 100 CITAS -->
-<div id="citasModalOverlay" class="chat-modal-overlay">
-    <div class="flappy-game-container citas-modal-container">
-        <!-- Encabezado del Modal -->
-        <div class="chat-header">
-            <div class="chat-header-info">
-                <i class="fa-solid fa-heart fa-lg text-danger"></i>
-                <div class="chat-info">
-                    <h3>Nuestras 100 Citas 💖</h3>
-                    <span class="chat-status" id="citasContador">Completadas: 0 / 100</span>
-                </div>
-            </div>
-            <button class="chat-close-btn" onclick="cerrarModalCitas()">&times;</button>
-        </div>
-
-        <!-- Lista de Citas con Scroll -->
-        <div class="citas-body">
-            <ul id="listaCitas" class="citas-lista">
-                <!-- Se genera dinámicamente con JS -->
-            </ul>
-        </div>
-    </div>
-</div>
 
 
 <!-- MODAL DEL JUEGO FLAPPY BIRD -->
