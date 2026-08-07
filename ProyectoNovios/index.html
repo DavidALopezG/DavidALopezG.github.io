@@ -195,6 +195,36 @@
 </div>
 
 
+<!-- BOTÓN PARA ABRIR EL MODAL (Puedes ponerlo en tu menú o donde gustes) -->
+<button class="btn-custom py-2 px-4" onclick="abrirModalCitas()">
+    <i class="fa-solid fa-heart-list me-1"></i> Nuestras 100 Citas 📑
+</button>
+
+<!-- MODAL DE LAS 100 CITAS -->
+<div id="citasModalOverlay" class="chat-modal-overlay">
+    <div class="flappy-game-container citas-modal-container">
+        <!-- Encabezado del Modal -->
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <i class="fa-solid fa-heart fa-lg text-danger"></i>
+                <div class="chat-info">
+                    <h3>Nuestras 100 Citas 💖</h3>
+                    <span class="chat-status" id="citasContador">Completadas: 0 / 100</span>
+                </div>
+            </div>
+            <button class="chat-close-btn" onclick="cerrarModalCitas()">&times;</button>
+        </div>
+
+        <!-- Lista de Citas con Scroll -->
+        <div class="citas-body">
+            <ul id="listaCitas" class="citas-lista">
+                <!-- Se genera dinámicamente con JS -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+
 <!-- MODAL DEL JUEGO FLAPPY BIRD -->
 <div id="flappyModalOverlay" class="chat-modal-overlay">
     <div class="flappy-game-container">
@@ -227,11 +257,14 @@
     </div>
 </div>
 
+
+
+
 <link rel="stylesheet" href="css/flappy.css">
 
 <!-- Importante: Primero la base de datos, luego la lógica -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
-
+<script src="js/citas.js"></script>
 <script src="js/chatbot-datos.js"></script>
 <script src="js/chatbot-logica.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

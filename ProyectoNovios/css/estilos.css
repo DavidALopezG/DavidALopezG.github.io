@@ -822,3 +822,64 @@ body.modal-open {
     border-radius: 10%;
     object-fit: cover;
 }
+
+
+
+/* Estilos para el Modal de 100 Citas */
+.citas-modal-container {
+    max-width: 420px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.citas-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #fff9fb;
+}
+
+.citas-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cita-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    background: #ffffff;
+    border: 2px solid #ffe3ec;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.cita-item:hover {
+    border-color: #ff8ebb;
+    transform: translateY(-1px);
+}
+
+.cita-item.completada {
+    background: #ffeef4;
+    border-color: #ffb6c1;
+    text-decoration: line-through;
+    opacity: 0.75;
+}
+
+.cita-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    accent-color: #ff4a85;
+    cursor: pointer;
+}
+
+.cita-texto {
+    font-size: 0.95rem;
+    color: var(--texto-oscuro, #2a1e24);
+    font-weight: 500;
+}
