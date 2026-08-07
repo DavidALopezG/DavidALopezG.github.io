@@ -12,16 +12,16 @@ let animacionId = null;
 // 🎨 CARGA DE IMÁGENES PERSONALIZADAS
 // ==========================================
 const imgFondo = new Image();
-imgFondo.src = "imagenes/fondos/fondo_juego.png"; // 👈 Cambia por la ruta de tu fondo
+imgFondo.src = "../imagenes/fondos/fondo_juego.png"; // 👈 Cambia por la ruta de tu fondo
 
 const imgTuberiaTop = new Image();
-imgTuberiaTop.src = "imagenes/fotos/todaviano.png"; // 👈 Cambia por la ruta de tu estructura superior
+imgTuberiaTop.src = "../imagenes/fotos/todaviano.png"; // 👈 Cambia por la ruta de tu estructura superior
 
 const imgTuberiaBottom = new Image();
-imgTuberiaBottom.src = "imagenes/fondos/columna_juego.png"; // 👈 Cambia por la ruta de tu estructura inferior
+imgTuberiaBottom.src = "../imagenes/fondos/columna_juego.png"; // 👈 Cambia por la ruta de tu estructura inferior
 
 const kittyImg = new Image();
-kittyImg.src = "imagenes/fotos/sopita_juego.png"; // 👈 Cambia por la ruta de tu personaje
+kittyImg.src = "../imagenes/fotos/sopita_juego.png"; // 👈 Cambia por la ruta de tu personaje
 
 
 // ==========================================
