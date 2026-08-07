@@ -130,18 +130,16 @@
                 </a>
             </div>
 
-            <div class="col-md-4">
-                <a href="" class="card-enlace">
-                    <div class="menu-card p-4 text-center shadow-sm">
-                        <div class="icon-wrapper mb-3">
-                            <!-- Se cambió fa-triangle-exclamation por fa-bell -->
-                            <i class="fa-solid fa-bell fs-4"></i>
-                        </div>
-                        <h3 class="h5 mb-2 titulo-elegante">Proximamente, más sorpresas!</h3>
-                        <p class="small text-muted mb-0">Con el tiempo iré agregando mas sorpresas asi que no te olvides de ingresar</p>
-                    </div>
-                </a>
-            </div>
+            <!-- TARJETA PARA EL JUEGO -->
+<div class="col-6 col-md-4 col-lg-3 mb-3">
+    <div class="menu-card p-3 text-center h-100" onclick="abrirJuegoFlappy()">
+        <div class="icon-wrapper mb-2">
+            <i class="fa-solid fa-gamepad fa-xl"></i>
+        </div>
+        <h6 class="fw-bold mb-1" style="font-size: 0.95rem;">Flappy Kitty</h6>
+        <span class="label-delicado">¡A jugar!</span>
+    </div>
+</div>
             
         </div>
         
@@ -166,7 +164,7 @@
         <!-- Encabezado con botón de cerrar -->
         <div class="chat-header">
             <div class="chat-header-info">
-                <img src="imagenes/fotos/nita_bot.png" alt="Bot Logo" class="chat-avatar-img">
+                <img src="/imagenes/fotos/nita_bot.png" alt="Bot Logo" class="chat-avatar-img">
         <div class="chat-info">
             <!-- Pon aquí el nuevo nombre que quieras darle -->
             <h3>Nita 🎀</h3>
@@ -197,7 +195,39 @@
 </div>
 
 
+<!-- MODAL DEL JUEGO FLAPPY BIRD -->
+<div id="flappyModalOverlay" class="chat-modal-overlay">
+    <div class="flappy-game-container">
+        <!-- Encabezado del Juego -->
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <i class="fa-solid fa-heart fa-lg"></i>
+                <div class="chat-info">
+                    <h3>Vuela Sopita! 🙀</h3>
+                    <span class="chat-status" id="flappyScoreText">Puntuación: 0</span>
+                </div>
+            </div>
+            <button class="chat-close-btn" onclick="cerrarJuegoFlappy()">&times;</button>
+        </div>
 
+        <!-- Pantalla del Canvas (Área donde corre el juego) -->
+        <div class="flappy-canvas-wrapper">
+            <canvas id="flappyCanvas" width="340" height="450"></canvas>
+            
+            <!-- Pantalla de Inicio / Game Over sobre el canvas -->
+            <div id="flappyStartScreen" class="flappy-overlay-screen">
+                <!-- 📸 VISTA PREVIA DEL PERSONAJE -->
+                <img id="flappyPlayerPreview" src="/imagenes/fotos/sopita_juego.png" alt="Personaje" class="flappy-preview-img mb-2">
+                
+                <h4 class="titulo-elegante mb-2" id="flappyScreenTitle">¡Vuela Sopita!</h4>
+                <p class="mb-3 fs-6" id="flappyScreenSubtitle">Toca la pantalla o presiona <b>Espacio</b> para saltar y esquivar los obstáculos.</p>
+                <button class="btn-custom py-2 px-4" onclick="iniciarJuegoFlappy()">¡Jugar!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="css/flappy.css">
 
 <!-- Importante: Primero la base de datos, luego la lógica -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
@@ -208,5 +238,7 @@
     <script src="js/login.js"></script>
     <script src="js/contador.js"></script>
     <script src="js/fondoDinamic.js"></script>
+    <script src="js/flappy.js"></script>
+
 </body>
 </html>

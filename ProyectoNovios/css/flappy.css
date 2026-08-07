@@ -1,0 +1,66 @@
+/* ==========================================
+   ESTILOS PARA EL JUEGO FLAPPY BIRD
+   ========================================== */
+   .flappy-game-container {
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    border-radius: 24px;
+    border: 3px solid var(--texto-oscuro);
+    box-shadow: 8px 8px 0px var(--sombra-pop);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Quicksand', sans-serif;
+    animation: slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flappy-canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background-color: var(--rosa-claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#flappyCanvas {
+    background-color: #ffeef4;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Pantalla de inicio / reinicio superpuesta */
+.flappy-overlay-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 10;
+}
+
+.flappy-overlay-screen.d-none {
+    display: none !important;
+}
+
+/* Imagen del personaje en la pantalla de Game Over / Inicio */
+.flappy-preview-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--texto-oscuro);
+    box-shadow: 4px 4px 0px var(--sombra-pop);
+    animation: bounce 1.5 infinite alternate ease-in-out;
+}
