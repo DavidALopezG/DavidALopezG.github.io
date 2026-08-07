@@ -21,7 +21,7 @@ const imgTuberiaBottom = new Image();
 imgTuberiaBottom.src = "./imagenes/fondos/columna_juego.png"; // 👈 Cambia por la ruta de tu estructura inferior
 
 const kittyImg = new Image();
-kittyImg.src = "../imagenes/fotos/sopita_juego.png"; // 👈 Cambia por la ruta de tu personaje
+kittyImg.src = "./imagenes/fotos/sopita_juego.png"; // 👈 Cambia por la ruta de tu personaje
 
 
 // ==========================================
