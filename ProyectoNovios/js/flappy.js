@@ -65,7 +65,7 @@ function cerrarJuegoFlappy() {
 function prepararPantallaInicio() {
     detenerJuego();
     document.getElementById("flappyStartScreen").classList.remove("d-none");
-    document.getElementById("flappyScreenTitle").innerText = "¡Flappy Kitty!";
+    document.getElementById("flappyScreenTitle").innerText = "¡Vuela Sopita!";
     document.getElementById("flappyScreenSubtitle").innerText = "Toca la pantalla o presiona Espacio para volar y esquivar obstáculos.";
     document.getElementById("flappyScoreText").innerText = `Puntuación: 0 | Récord: ${mejorPuntuacion}`;
     dibujar();
