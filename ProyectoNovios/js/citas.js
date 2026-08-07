@@ -1,54 +1,118 @@
-// LISTA DE LAS 100 CITAS (Puedes personalizar el texto de cada una)
+// LISTA DE LAS 100 CITAS DE LA IMAGEN
 const TODAS_LAS_CITAS = [
-    "Picnic en el parque",
-    "Ir al cine a ver una película de terror",
-    "Cocinar juntos una pizza desde cero",
-    "Ver el atardecer juntos",
-    "Maratón de películas con pijamas y palomitas",
-    "Irme de viaje de fin de semana",
-    "Tener una cita de karaoke en casa",
-    "Irme a un museo o exposición de arte",
-    "Pintar un lienzo o cerámica juntos",
-    "Ir a un parque de atracciones",
-    "Ver las estrellas de noche con una manta",
-    "Ir a comer helado a un lugar nuevo",
-    "Tener una cita de juegos de mesa",
-    "Ir a un mercado vintage o de pulgas",
-    "Comprar ropa el uno para el otro",
-    "Hacer un intercambio de fotos instantáneas",
-    "Ir a un café bonito a leer o platicar",
-    "Hacer una noche de spa e hidratación en casa",
-    "Ir a patinar sobre hielo o ruedas",
-    "Noche de tacos y juegos de cartas",
-    "Tomarse fotos en una cabina fotográfica (photobooth)",
-    "Hacer una cápsula del tiempo para abrir en un año",
-    "Ir a un concierto de su banda favorita",
-    "Caminar bajo la lluvia con un solo paraguas",
-    "Cita de degustación de postres",
-    // Agrega o edita el resto de tus ideas aquí hasta llegar a las 100...
+    "Ir al cine",
+    "Salir a comer",
+    "Ir al parque",
+    "Día de picnic",
+    "Cenar en un restaurante bonito",
+    "Viaje fuera de la ciudad",
+    "Ir a un museo",
+    "Pedir cena a domicilio",
+    "Armar un rompecabezas",
+    "Preparar un postre",
+    "Pintar un cuadro",
+    "Ir a patinar",
+    "Ir a un partido de béisbol",
+    "Maratón de series",
+    "Ir a la playa",
+    "Ir a un concierto",
+    "Ir por bebidas con tapioca",
+    "Ir al zoológico",
+    "Ir de compras",
+    "Ir a remar / pescar",
+    "Ir a un tour",
+    "Ir a un circo",
+    "Ir a una fiesta",
+    "Pasear en la plaza",
+    "Ir por un helado",
+    "Ir a un cumpleaños",
+    "Cenar en el coche",
+    "Ir a una boda",
+    "Ir a una cascada",
+    "Cena romántica",
+    "Cocinar juntos",
+    "Acampar",
+    "Caminar bajo la lluvia",
+    "Ver un atardecer",
+    "Leer juntos",
+    "Desayuno en la cama",
+    "Ver partidos en la TV",
+    "Ir al supermercado",
+    "Trabajar juntos",
+    "Pintar una pared",
+    "Dibujar / pintar juntos",
+    "Subirnos a un globo aerostático",
+    "Armar un Lego",
+    "Vestir iguales",
+    "Jugar videojuegos",
+    "Viajar en barco o yate",
+    "Ponernos mascarillas",
+    "Salir a bailar",
+    "Disfrazarnos en pareja",
+    "Ir por un café",
+    "Escuchar música",
+    "Armar un mueble",
+    "Volar un papalote",
+    "Guerra de almohadas",
+    "Pijamada",
+    "Observar las estrellas",
+    "Hacer una cita con temática",
+    "Pasear a nuestras mascotas",
+    "Pedir pizza",
+    "Salir a caminar",
+    "Hacer una fogata",
+    "Hacer una sesión de fotos",
+    "Hacer manualidades",
+    "Jugar juegos de mesa",
+    "Ir a un bazar",
+    "Ir a comer donas",
+    "Comer en un buffet",
+    "Empezar una alcancía",
+    "Ver la luna",
+    "Escribirnos una carta",
+    "Hacernos un tatuaje",
+    "Ir a un pueblo mágico",
+    "Ir a un spa",
+    "Cena familiar",
+    "Ir por hamburguesas",
+    "Ir a una posada",
+    "Viajar en avión",
+    "Salir con amigos",
+    "Noche de películas",
+    "Ir a cenar tacos",
+    "Ir a un parque de diversiones",
+    "Salir por un elote / esquite",
+    "Comprar plantas",
+    "Ir a jugar bolos",
+    "Ir al planetario",
+    "Visitar el acuario",
+    "Pasear en bicicleta",
+    "Ver una obra de teatro",
+    "Ir a una feria",
+    "Sacar un peluche de una máquina",
+    "Hora de ser espontáneos",
+    "Hora de ser espontáneos",
+    "Hora de ser espontáneos",
+    "Hora de ser espontáneos",
+    "Hora de ser espontáneos",
+    "Hora de ser espontáneos",
+    "Hora de ser espontáneos",
+    "Hora de ser espontáneos",
+    "Hora de ser espontáneos",
+    "Hora de ser espontáneos"
 ];
-
-// Si no completas las 100 en la lista de arriba, el código rellenará automáticamente
-while (TODAS_LAS_CITAS.length < 100) {
-    TODAS_LAS_CITAS.push(`Cita especial #${TODAS_LAS_CITAS.length + 1}`);
-}
 
 // Cargar estado guardado de LocalStorage
 let citasGuardadas = JSON.parse(localStorage.getItem("citas_completadas")) || {};
 
-function abrirModalCitas() {
-    document.getElementById("citasModalOverlay").classList.add("active");
-    document.body.classList.add("modal-open");
+document.addEventListener("DOMContentLoaded", () => {
     renderizarCitas();
-}
-
-function cerrarModalCitas() {
-    document.getElementById("citasModalOverlay").classList.remove("active");
-    document.body.classList.remove("modal-open");
-}
+});
 
 function renderizarCitas() {
     const lista = document.getElementById("listaCitas");
+    if (!lista) return;
+
     lista.innerHTML = "";
     let completadasCount = 0;
 
@@ -56,29 +120,27 @@ function renderizarCitas() {
         const estaCompletada = !!citasGuardadas[index];
         if (estaCompletada) completadasCount++;
 
-        const li = document.createElement("li");
-        li.className = `cita-item ${estaCompletada ? 'completada' : ''}`;
-        li.onclick = () => toggleCita(index);
+        const div = document.createElement("div");
+        div.className = `cita-item ${estaCompletada ? 'completada' : ''}`;
+        div.onclick = () => toggleCita(index);
 
-        li.innerHTML = `
+        div.innerHTML = `
             <input type="checkbox" ${estaCompletada ? 'checked' : ''} tabindex="-1">
             <span class="cita-texto">${index + 1}. ${citaText}</span>
         `;
 
-        lista.appendChild(li);
+        lista.appendChild(div);
     });
 
-    // Actualizar contador
-    document.getElementById("citasContador").innerText = `Completadas: ${completadasCount} / 100`;
+    // Actualizar el contador en la cabecera
+    const contador = document.getElementById("citasContador");
+    if (contador) {
+        contador.innerText = `Completadas: ${completadasCount} / 100`;
+    }
 }
 
 function toggleCita(index) {
-    // Alternar valor
     citasGuardadas[index] = !citasGuardadas[index];
-    
-    // Guardar en el navegador para que no se pierda al recargar
     localStorage.setItem("citas_completadas", JSON.stringify(citasGuardadas));
-    
-    // Volver a renderizar
     renderizarCitas();
 }
